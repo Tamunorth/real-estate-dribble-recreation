@@ -84,7 +84,9 @@ class _HomePageState extends State<HomePage> {
                       curve: kDefaultCurve,
                       duration: kDefaultAnimationDuration,
                     )
-                    .fadeIn(),
+                    .fadeIn(
+                      duration: kDefaultAnimationDuration,
+                    ),
 
                 const Gap.h(40),
                 SizedBox(

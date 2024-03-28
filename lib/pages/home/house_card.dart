@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 import 'dart:ui';
 
@@ -9,7 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:real_estate_task/utils/custom_extensions.dart';
 import 'package:real_estate_task/utils/constants.dart';
-import 'package:real_estate_task/widgets/count_up.dart';
+import 'package:real_estate_task/widgets/custom_number_counter.dart';
 import 'package:real_estate_task/widgets/gap.dart';
 
 enum HouseCardType { vertical, horizontal }
@@ -83,35 +81,35 @@ class HouseCard extends StatelessWidget {
               )
                   .animate()
                   .slideX(
-                delay: kDefaultAnimationDuration * 0.5,
-                duration: kDefaultAnimationDuration,
-                curve: kDefaultCurve,
-              )
+                    delay: kDefaultAnimationDuration * 0.5,
+                    duration: kDefaultAnimationDuration,
+                    curve: kDefaultCurve,
+                  )
                   .fade(
-                duration: kDefaultAnimationDuration,
-                curve: kDefaultCurve,
-              ),
+                    duration: kDefaultAnimationDuration,
+                    curve: kDefaultCurve,
+                  ),
               const Text(
                 'Galadima',
                 textAlign: TextAlign.center,
               ).animate().fadeIn(
-                delay: ((kDefaultAnimationDuration * 0.5) +
-                    kDefaultAnimationDuration),
-                duration: kDefaultAnimationDuration,
-              ),
+                    delay: ((kDefaultAnimationDuration * 0.5) +
+                        kDefaultAnimationDuration),
+                    duration: kDefaultAnimationDuration,
+                  ),
             ],
           ),
         )
             .animate()
             .slideX(
-          delay: kDefaultAnimationDuration * 0.5,
-          duration: kDefaultAnimationDuration,
-          curve: kDefaultCurve,
-        )
+              delay: kDefaultAnimationDuration * 0.5,
+              duration: kDefaultAnimationDuration,
+              curve: kDefaultCurve,
+            )
             .fade(
-          duration: kDefaultAnimationDuration,
-          curve: kDefaultCurve,
-        ),
+              duration: kDefaultAnimationDuration,
+              curve: kDefaultCurve,
+            ),
       ],
     );
   }

@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:real_estate_task/utils/constants.dart';
 import 'package:real_estate_task/widgets/gap.dart';
-import 'package:real_estate_task/widgets/text_box.dart';
+import 'package:real_estate_task/widgets/text_box_field.dart';
 
 import '../../widgets/custom_pop_up_item.dart';
 

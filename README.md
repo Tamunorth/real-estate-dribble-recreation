@@ -20,7 +20,7 @@ The font used in this app is [Euclid Circular A ](https://www.cdnfonts.com/eucli
 
 ## Animation
 
-- The homepage animates when the app launches, providing a smooth transition to the main interface. However, this animations are not repeated when the Homepage come back to focus as shown towards the end of the provided video.
+- The homepage and search pages animate when the app launches and upon subsequet naviagtions to allow for proper inspection of the animations.
 
 ## Note
 

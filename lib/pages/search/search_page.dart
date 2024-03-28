@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,31 +34,23 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Transform.scale(
-            scale: 1.2,
-            child: GoogleMap(
-              onMapCreated: _onMapCreated,
-              zoomControlsEnabled: false,
-              scrollGesturesEnabled: false,
-              initialCameraPosition: CameraPosition(
-                target: _center,
-                zoom: 13.0,
+          GoogleMap(
+            onMapCreated: _onMapCreated,
+            zoomControlsEnabled: false,
+            scrollGesturesEnabled: false,
+            initialCameraPosition: CameraPosition(
+              target: _center,
+              zoom: 13.0,
+            ),
+          ).animate().fadeIn(
+                duration: kDefaultAnimationDuration * 0.8,
               ),
-            ).animate().fadeIn(
-                  duration: kDefaultAnimationDuration * 0.8,
-                ),
-          ),
           Positioned(
             left: 50,
             child: CustomMarker(
@@ -107,57 +98,61 @@ class _SearchPageState extends State<SearchPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextBoxField(
-                          controller: TextEditingController(text: locationText),
-                          decoration: InputDecoration(
-                            // hintText: locationText,
-                            prefixIcon: const Icon(HeroIcons.magnifying_glass),
-                            contentPadding:
-                                const EdgeInsets.symmetric(horizontal: 16),
-                            filled: true,
-                            fillColor:
-                                Theme.of(context).scaffoldBackgroundColor,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30),
+                  RepaintBoundary(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextBoxField(
+                            controller:
+                                TextEditingController(text: locationText),
+                            decoration: InputDecoration(
+                              // hintText: locationText,
+                              prefixIcon:
+                                  const Icon(HeroIcons.magnifying_glass),
+                              contentPadding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              filled: true,
+                              fillColor:
+                                  Theme.of(context).scaffoldBackgroundColor,
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(30),
+                              ),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30),
+                          ),
+                        )
+                            .animate()
+                            .fadeIn(
+                              duration: kDefaultAnimationDuration,
+                            )
+                            .slideX(
+                              duration: kDefaultAnimationDuration,
+                              curve: kDefaultCurve,
                             ),
+                        const Gap.w(10),
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
-                        ),
-                      )
-                          .animate()
-                          .fadeIn(
-                            duration: kDefaultAnimationDuration,
-                          )
-                          .slideX(
-                            duration: kDefaultAnimationDuration,
-                            curve: kDefaultCurve,
+                          child: Icon(
+                            Icons.tune_rounded,
+                            size: 16,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSecondaryContainer,
                           ),
-                      const Gap.w(10),
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                        ),
-                        child: Icon(
-                          Icons.tune_rounded,
-                          size: 16,
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onSecondaryContainer,
-                        ),
-                      ).animate().scale(
-                            duration: kDefaultAnimationDuration,
-                            curve: kDefaultCurve,
-                          ),
-                    ],
+                        ).animate().scale(
+                              duration: kDefaultAnimationDuration,
+                              curve: kDefaultCurve,
+                            ),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

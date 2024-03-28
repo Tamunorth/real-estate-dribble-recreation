@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_task/pages/base_page.dart';
-import 'package:real_estate_task/pages/home_page.dart';
+import 'package:real_estate_task/pages/base/base_page.dart';
+import 'package:real_estate_task/pages/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());

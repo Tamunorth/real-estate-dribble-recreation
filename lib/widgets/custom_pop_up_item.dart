@@ -84,7 +84,7 @@ class _CustomPopupMenuItemState<T>
                 color: widget.checked ? Theme.of(context).primaryColor : null,
                 // color: Color(0xff000000),
               ),
-              Gap.w(5),
+              const Gap.w(5),
               Text(widget.title),
             ],
           ),

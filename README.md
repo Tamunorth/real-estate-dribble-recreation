@@ -5,8 +5,13 @@ design [here](https://dribbble.com/shots/23780608-Real-Estate-App)
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <img src="screenshots/screenshot1.png" alt="Screenshot 1" style="margin: 0 10px; width: 45%;">
+  <img src="screenshots/screenshot2.png" alt="Screenshot 2" style="width:45%;">
+</div>
+
 
 ## Fonts
 

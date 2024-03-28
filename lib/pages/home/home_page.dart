@@ -27,6 +27,12 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  List<String> imagesList = [
+    'assets/images/image_one.png',
+    'assets/images/image_two.png',
+    'assets/images/image_three.png',
+  ];
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
@@ -162,10 +168,10 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               childrenDelegate: SliverChildBuilderDelegate(
-                (context, index) => const HouseCard(
-                  image: 'assets/images/image_two.png',
+                (context, index) => HouseCard(
+                  image: imagesList[index],
                 ),
-                childCount: 6,
+                childCount: imagesList.length,
               ),
             ),
           );

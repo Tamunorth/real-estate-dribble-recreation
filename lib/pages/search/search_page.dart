@@ -24,7 +24,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(59.931079, 30.386382);
 
   int selectedItem = 2;
 
@@ -55,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
               scrollGesturesEnabled: false,
               initialCameraPosition: CameraPosition(
                 target: _center,
-                zoom: 11.0,
+                zoom: 13.0,
               ),
             ).animate().fadeIn(
                   duration: kDefaultAnimationDuration * 0.8,

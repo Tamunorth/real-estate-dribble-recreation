@@ -10,24 +10,13 @@ import 'package:real_estate_task/utils/constants.dart';
 class BasePage extends StatefulWidget {
   const BasePage({
     super.key,
-    this.passedIndex = 0,
   });
-
-  final int passedIndex;
 
   @override
   State createState() => _BasePageState();
 }
 
 class _BasePageState extends State<BasePage> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    _selectedIndex = widget.passedIndex;
-
-    super.initState();
-  }
-
   int _selectedIndex = 2;
 
   void _switchNavPage(index) {
@@ -36,22 +25,20 @@ class _BasePageState extends State<BasePage> {
     });
   }
 
+  final pages = [
+    const SearchPage(),
+    const Scaffold(),
+    const HomePage(),
+    const Scaffold(),
+    const Scaffold(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       extendBody: true,
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: [
-          ///This is to force the animations on the maps page to play agian
-          Visibility(visible: _selectedIndex == 0, child: const SearchPage()),
-          const Scaffold(),
-          const HomePage(),
-          const Scaffold(),
-          const Scaffold(),
-        ],
-      ),
+      body: pages[_selectedIndex],
       bottomNavigationBar: Container(
         margin: EdgeInsets.fromLTRB(width * 0.15, 0, width * 0.15, 35),
         padding: const EdgeInsets.all(8),

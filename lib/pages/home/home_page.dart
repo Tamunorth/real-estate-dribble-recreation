@@ -1,13 +1,10 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:real_estate_task/utils/custom_extensions.dart';
 import 'package:real_estate_task/utils/constants.dart';
-import 'package:real_estate_task/widgets/custom_number_counter.dart';
 import 'package:real_estate_task/widgets/gap.dart';
 
 import 'home_app_bar.dart';

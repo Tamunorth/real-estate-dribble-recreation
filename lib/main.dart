@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_task/pages/base_page.dart';
-import 'package:real_estate_task/pages/home_page.dart';
+import 'package:real_estate_task/pages/base/base_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,9 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const BasePage(
-        passedIndex: 2,
-      ),
+      home: const BasePage(),
     );
   }
 }

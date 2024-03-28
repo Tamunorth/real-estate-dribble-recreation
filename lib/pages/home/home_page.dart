@@ -11,20 +11,10 @@ import 'home_app_bar.dart';
 import 'house_card.dart';
 import 'offers_tile.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  List<String> imagesList = [
+  final List<String> imagesList = const [
     'assets/images/image_one.png',
     'assets/images/image_two.png',
     'assets/images/image_three.png',
